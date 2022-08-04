@@ -10,6 +10,7 @@ Java fx Application with mysql database
 Jfoenix 8.0 or higher<br/>
 MYSQL Connector 8 or higher<br/>
 Java JDK at least java8.<br/>
+Animatated FX
 </h3>
 
 <h1>Database</h1>

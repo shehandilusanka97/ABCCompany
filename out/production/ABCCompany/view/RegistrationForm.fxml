@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane fx:id="root" prefHeight="545.0" prefWidth="405.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.RegistrationFormController">
+   <children>
+      <Label fx:id="lblWelcome" layoutX="138.0" layoutY="62.0" prefHeight="39.0" prefWidth="246.0" text="Register" textFill="#1d0e53">
+         <font>
+            <Font name="Palatino Linotype Bold Italic" size="36.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblEId" layoutX="58.0" layoutY="141.0" text="user ID">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="btnAdd" buttonType="RAISED" layoutX="213.0" layoutY="132.0" onAction="#btnAddOnAction" prefHeight="36.0" prefWidth="146.0" style="-fx-background-color: #1D0E53;" text="+Add New" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXButton>
+      <JFXTextField fx:id="txrUserName" labelFloat="true" layoutX="58.0" layoutY="213.0" prefHeight="27.0" prefWidth="290.0" promptText="Username">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtContact" labelFloat="true" layoutX="58.0" layoutY="261.0" prefHeight="27.0" prefWidth="290.0" promptText="Contact">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </JFXTextField>
+      <JFXPasswordField fx:id="txtPassword" labelFloat="true" layoutX="58.0" layoutY="307.0" prefHeight="27.0" prefWidth="290.0" promptText="Password">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </JFXPasswordField>
+      <JFXPasswordField fx:id="txtConPassword" labelFloat="true" layoutX="58.0" layoutY="360.0" prefHeight="27.0" prefWidth="290.0" promptText="Confirm Password">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </JFXPasswordField>
+      <JFXButton fx:id="btnRegister" buttonType="RAISED" layoutX="122.0" layoutY="426.0" onAction="#btnRegisterOnAction" prefHeight="36.0" prefWidth="146.0" style="-fx-background-color: #2ecc71;" text="Register" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXButton>
+      <Label fx:id="lblSignUp" layoutX="124.0" layoutY="479.0" onMouseClicked="#onClickSignUp" text=" Have an Account? Sign in" textFill="#2c512a" underline="true">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

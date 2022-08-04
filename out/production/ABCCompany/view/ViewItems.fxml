@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="709.0" prefWidth="889.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ViewItemsController">
+   <children>
+      <ImageView fitHeight="635.0" fitWidth="889.0" layoutY="97.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asset/istockphoto-515673754-612x612.jpg" />
+         </image>
+      </ImageView>
+      <TableView fx:id="tblItem" layoutX="36.0" layoutY="147.0" prefHeight="276.0" prefWidth="829.0" stylesheets="@../css/table.css">
+         <columns>
+            <TableColumn prefWidth="117.60000991821289" text="ITEM CODE" />
+            <TableColumn prefWidth="382.3999786376953" text="DESCRIPTION" />
+            <TableColumn prefWidth="162.4000244140625" text="QTY ON HAND" />
+            <TableColumn prefWidth="161.5999755859375" text="UNIT PRICE" />
+         </columns>
+      </TableView>
+      <JFXButton fx:id="btnUpdate" buttonType="RAISED" layoutX="419.0" layoutY="437.0" onAction="#btnUpdateOnAction" prefHeight="37.0" prefWidth="137.0" style="-fx-background-color: #26de81;" text="Update" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnDelete" buttonType="RAISED" layoutX="591.0" layoutY="437.0" onAction="#btnDeleteOnAction" prefHeight="37.0" prefWidth="137.0" style="-fx-background-color: #eb3b5a;" text="Delete" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXTextField fx:id="txtDescription" labelFloat="true" layoutX="244.0" layoutY="26.0" prefHeight="31.0" prefWidth="268.0" promptText="Item Description">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtQtyOnHand" labelFloat="true" layoutX="36.0" layoutY="79.0" prefHeight="31.0" prefWidth="268.0" promptText="Qty On Hand">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtId" labelFloat="true" layoutX="36.0" layoutY="22.0" prefHeight="31.0" prefWidth="116.0" promptText="Item Code">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtUnitPrice" labelFloat="true" layoutX="382.0" layoutY="79.0" prefHeight="31.0" prefWidth="268.0" promptText="Unit Price">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </JFXTextField>
+   </children>
+</AnchorPane>

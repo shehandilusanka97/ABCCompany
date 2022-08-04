@@ -1,0 +1,25 @@
+.right-side-background{
+    -fx-background-color: darkgrey;
+}
+.left-side-background{
+    -fx-background-color: #2f4f4f;
+}
+.transparent{
+    -fx-background-color: rgba(0,0,0,0) ;
+}
+.border{
+    -fx-border-color: #2f4f4f;
+    -fx-border-width:1.5;
+}
+.anchorpane{
+    -fx-border-width: 2;
+    -fx-border-radius: 30;
+    -fx-background-radius: 30;
+}
+.right-side-border{
+    -fx-background-color:#01BED2 ;
+    -fx-border-width: 2;
+    -fx-border-color: black;
+    -fx-border-radius: 15;
+    -fx-background-radius: 15;
+}

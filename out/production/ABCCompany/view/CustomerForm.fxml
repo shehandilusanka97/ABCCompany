@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="709.0" prefWidth="889.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CustomerFormController">
+   <children>
+      <ImageView fitHeight="592.0" fitWidth="889.0" layoutY="117.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asset/background.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="309.0" fitWidth="889.0" layoutY="-143.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asset/background1.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="633.0" layoutY="207.0" prefHeight="43.0" prefWidth="133.0" text="Customer id :">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblCustomerId" layoutX="738.0" layoutY="207.0" prefHeight="43.0" prefWidth="57.0" text="001">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtName" labelFloat="true" layoutX="362.0" layoutY="284.0" prefHeight="36.0" prefWidth="431.0" promptText="Name ">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtAddress" labelFloat="true" layoutX="362.0" layoutY="346.0" prefHeight="36.0" prefWidth="431.0" promptText="Address">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtEmail" labelFloat="true" layoutX="362.0" layoutY="409.0" prefHeight="36.0" prefWidth="431.0" promptText="Email" />
+      <JFXTextField fx:id="txtContactNo" labelFloat="true" layoutX="362.0" layoutY="472.0" prefHeight="36.0" prefWidth="431.0" promptText="Contact No">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </JFXTextField>
+      <JFXButton fx:id="btnAddNewCustomer" blendMode="MULTIPLY" buttonType="RAISED" cache="true" cacheHint="SPEED" layoutX="643.0" layoutY="88.0" onAction="#btnAddNewCustomerOnAction" prefHeight="43.0" prefWidth="173.0" style="-fx-background-color: #050d3b;" text="+Add New Customer" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnSubmit" buttonType="RAISED" layoutX="465.0" layoutY="541.0" onAction="#btnSubmitOnAction" prefHeight="43.0" prefWidth="173.0" style="-fx-background-color: #1e90ff;" text="Submit" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

@@ -13,7 +13,7 @@ Java JDK at least java8.<br/>
 </h3>
 
 <h1>Database</h1>
-<p>
+
 create database abc_company;
 use abc_company;
 
@@ -69,4 +69,3 @@ on delete cascade on update cascade,
 constraint foreign key(orderId) references Orders (orderId) 
 on delete cascade on update cascade
 )engine=InnoDB;
-</p>

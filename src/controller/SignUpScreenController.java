@@ -1,5 +1,6 @@
 package controller;
 
+import animatefx.animation.FadeIn;
 import animatefx.animation.Shake;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
@@ -55,6 +56,7 @@ public class SignUpScreenController implements Initializable {
                 Parent parent = FXMLLoader.load(getClass().getResource("../view/DashBoardForm.fxml"));
                 Scene scene = new Scene(parent);
                 Stage primaryStage = (Stage) root.getScene().getWindow();
+                new FadeIn(root).play();
                 primaryStage.setScene(scene);
                 primaryStage.setTitle("Dashboard");
                 primaryStage.centerOnScreen();
@@ -93,6 +95,7 @@ public class SignUpScreenController implements Initializable {
         Parent parent = FXMLLoader.load(getClass().getResource("../view/NewSignUp.fxml"));
         Scene scene = new Scene(parent);
         Stage primaryStage =(Stage) root.getScene().getWindow();
+        new FadeIn(root).play();
         primaryStage.setScene(scene);
         primaryStage.centerOnScreen();
 

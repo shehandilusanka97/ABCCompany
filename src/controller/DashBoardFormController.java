@@ -1,6 +1,8 @@
 package controller;
 
+import animatefx.animation.*;
 import com.jfoenix.controls.JFXButton;
+import javafx.animation.RotateTransition;
 import javafx.animation.ScaleTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -8,6 +10,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.effect.BoxBlur;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -42,6 +45,8 @@ public class DashBoardFormController {
 
     public void btnAddCustomerOnAction(ActionEvent actionEvent) {
         lblWelcome.setText("Customer Form");
+        new SlideInLeft(anchor).play();
+        new FadeInDownBig(lblWelcome).play();
 
         try {
             setLordAnchorPane(anchor,"CustomerForm.fxml");
@@ -55,6 +60,8 @@ public class DashBoardFormController {
 
     public void btnAddItemOnAction(ActionEvent actionEvent) {
         lblWelcome.setText("Item Form");
+        new SlideInLeft(anchor).play();
+        new FadeInDownBig(lblWelcome).play();
 
         try {
             setLordAnchorPane(anchor, "ItemForm.fxml");
@@ -65,6 +72,8 @@ public class DashBoardFormController {
 
     public void btnViewCustomerOnAction(ActionEvent actionEvent) {
         lblWelcome.setText("View Customer");
+        new FadeInDownBig(lblWelcome).play();
+        new SlideInLeft(anchor).play();
 
         try {
             setLordAnchorPane(anchor,"viewCustomer.fxml");
@@ -75,6 +84,8 @@ public class DashBoardFormController {
 
     public void btnViewItemOnAction(ActionEvent actionEvent) {
         lblWelcome.setText("View Items");
+        new SlideInLeft(anchor).play();
+        new FadeInDownBig(lblWelcome).play();
 
         try {
             setLordAnchorPane(anchor,"ViewItems.fxml");
@@ -85,6 +96,8 @@ public class DashBoardFormController {
 
     public void btnOrderOnAction(ActionEvent actionEvent) {
         lblWelcome.setText("Order");
+        new SlideInLeft(anchor).play();
+        new FadeInDownBig(lblWelcome).play();
 
         try {
             setLordAnchorPane(anchor,"OrderForm.fxml");
@@ -95,11 +108,13 @@ public class DashBoardFormController {
     }
 
     public void btnLogOutOnAction(ActionEvent actionEvent) throws IOException {
+        new FadeIn(root0).play();
         Parent parent = FXMLLoader.load(getClass().getResource("../view/SignUpScreen.fxml"));
         Scene scene = new Scene(parent);
         Stage primaryStage =(Stage) root0.getScene().getWindow();
         primaryStage.setScene(scene);
         primaryStage.centerOnScreen();
+
     }
 
 //    On Mouse Events

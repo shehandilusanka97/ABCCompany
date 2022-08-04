@@ -4,7 +4,7 @@ public class OrderDetails {
     private String orderId;
     private String itemCode;
     private int qty;
-    private double unitPrice;
+
 
     public OrderDetails() {
     }
@@ -13,7 +13,7 @@ public class OrderDetails {
         this.orderId = orderId;
         this.itemCode = itemCode;
         this.qty = qty;
-        this.unitPrice = unitPrice;
+
     }
 
     public String getOrderId() {
@@ -40,13 +40,6 @@ public class OrderDetails {
         this.qty = qty;
     }
 
-    public double getUnitPrice() {
-        return unitPrice;
-    }
-
-    public void setUnitPrice(double unitPrice) {
-        this.unitPrice = unitPrice;
-    }
 
     @Override
     public String toString() {
@@ -54,7 +47,6 @@ public class OrderDetails {
                 "orderId='" + orderId + '\'' +
                 ", itemCode='" + itemCode + '\'' +
                 ", qty=" + qty +
-                ", unitPrice=" + unitPrice +
                 '}';
     }
 }

@@ -50,7 +50,7 @@ public class OrderFormController implements Initializable {
     Connection connection = DBConnection.getInstance().getConnection();
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        btnDelete.setDisable(true);
+
           clmCode.setCellValueFactory(new PropertyValueFactory<>("id"));
           clmDescription.setCellValueFactory(new PropertyValueFactory<>("description"));
           clmUnityPrice.setCellValueFactory(new PropertyValueFactory<>("unitPrice"));
@@ -139,30 +139,11 @@ public class OrderFormController implements Initializable {
 
 
     public void btnAddToCartOnAction(ActionEvent actionEvent) {
-        int qty = Integer.parseInt(txtQty.getText());
-        double unitPrice = Double.parseDouble(txtUnitPrice.getText());
-        double totalCost = unitPrice * qty;
-        int qtyOnHand = Integer.parseInt(txtQtyOnHand.getText());
-
-    }
-
-
-    private void calculateTotal() {
-        double total = 0;
-        for (CartTM tm : tmList) {
-            total += tm.getTotalCost();
-        }
-        lblTotal.setText(String.valueOf(total));
-    }
-
-    public void btnPlaceOrderOnAction(ActionEvent actionEvent) {
         String description = txtDescription.getText();
         int qty = Integer.parseInt(txtQty.getText());
         double unitPrice = Double.parseDouble(txtUnitPrice.getText());
         double totalCost = unitPrice * qty;
         int qtyOnHand = Integer.parseInt(txtQtyOnHand.getText());
-
-
 
         if (qtyOnHand < qty) {
             new Alert(Alert.AlertType.WARNING, "Out Of Stock...!").show();
@@ -196,6 +177,74 @@ public class OrderFormController implements Initializable {
         txtQty.clear();
 
     }
+    public void btnDeleteOnAction(ActionEvent actionEvent) throws SQLException {
+
+    }
+
+
+    private void calculateTotal() {
+        double total = 0;
+        for (CartTM tm : tmList) {
+            total += tm.getTotalCost();
+        }
+        lblTotal.setText(String.valueOf(total));
+    }
+
+    public void btnPlaceOrderOnAction(ActionEvent actionEvent) {
+        autoOrderId();
+        String s = lblOrderId.getText();
+
+        Order order = new Order(
+                s,
+                txtOrderDate.getText(),
+                cmbCustomer.getValue()
+        );
+
+        ArrayList<OrderDetails> details = new ArrayList<>();
+
+        for (CartTM tm : tmList
+        ) {
+            details.add(
+                    new OrderDetails(
+                            s,
+                            tm.getId(),
+                            tm.getQty(),
+                            tm.getUnitPrice()
+                    )
+            );
+        }
+
+
+
+        try {
+
+            Connection  connection = DBConnection.getInstance().getConnection();
+            connection.setAutoCommit(false);
+
+            boolean isOrderSaved = new OrderCrudController().saveOrder(order);
+            if (isOrderSaved) {
+                boolean isDetailsSaved = new OrderCrudController().saveOrderDetails(details);
+                if (isDetailsSaved) {
+                    connection.commit();
+                    new Alert(Alert.AlertType.CONFIRMATION, "Saved Successfully...!").showAndWait();
+                } else {
+                    connection.rollback();
+                    new Alert(Alert.AlertType.ERROR, "Error...!").show();
+                }
+            } else {
+                new Alert(Alert.AlertType.ERROR, "Error...!").show();
+            }
+
+        } catch (SQLException | ClassNotFoundException e) {
+
+        } finally {
+            try {
+                connection.setAutoCommit(true);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+      }
 
     private void qtyChange() {
         int value = Integer.parseInt(txtQtyOnHand.getText());
@@ -240,10 +289,6 @@ public class OrderFormController implements Initializable {
         }
 
     }
-    public void btnDeleteOnAction(ActionEvent actionEvent) {
-    }
-
-
 
     private void loadDate() {
         txtOrderDate.setText(new SimpleDateFormat("yyyy-MM-dd").format(new Date()));

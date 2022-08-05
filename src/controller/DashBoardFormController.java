@@ -12,6 +12,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.effect.BoxBlur;
 import javafx.scene.effect.DropShadow;
+import javafx.scene.effect.Light;
+import javafx.scene.effect.Lighting;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -125,6 +127,7 @@ public class DashBoardFormController {
                case "btnAddCustomer" : btnAddCustomer.setStyle("-fx-background-color: #5352ed");
                lblWelcome.setText("Add Customer");
                    imgOption.setImage(new Image("asset/customer.jpg"));
+                   new FlipInX(lblWelcome).play();
 
 
                break;
@@ -132,6 +135,8 @@ public class DashBoardFormController {
                case "btnAddItem" : btnAddItem.setStyle("-fx-background-color: #5352ed");
                    lblWelcome.setText("Add Items");
                    imgOption.setImage(new Image("asset/VegeBack.jpg"));
+                   new FlipInX(lblWelcome).play();
+
 
 
                break;
@@ -139,23 +144,27 @@ public class DashBoardFormController {
                case "btnViewCustomer": btnViewCustomer.setStyle("-fx-background-color: #5352ed");
                    lblWelcome.setText("View Customers");
                    imgOption.setImage(new Image("asset/viewCustomers.jpg"));
+                   new FlipInX(lblWelcome).play();
 
                break;
 
                case "btnViewItem": btnViewItem.setStyle("-fx-background-color: #5352ed");
                    lblWelcome.setText("View Items");
                    imgOption.setImage(new Image("asset/viewItems.jpg"));
+                   new FlipInX(lblWelcome).play();
 
                break;
 
                case "btnOrder": btnOrder.setStyle("-fx-background-color: #5352ed");
                    lblWelcome.setText("Place Order");
                    imgOption.setImage(new Image("asset/cart.jpg"));
+                   new FlipInX(lblWelcome).play();
 
                break;
 
                case "btnLogOut": btnLogOut.setStyle("-fx-background-color: red");
                      lblWelcome.setText("Log out");
+                   new FlipInX(lblWelcome).play();
 
                break;
 
